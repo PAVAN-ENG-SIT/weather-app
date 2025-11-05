@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>WeatherCast - Modern Weather App</title>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Background Animation -->
+        <div class="background-animation"></div>
+        
+        <!-- Main Weather Card -->
+        <div class="weather-card">
+            <!-- Header -->
+            <header class="weather-header">
+                <h1 class="app-title">
+                    <i class="fas fa-cloud-sun"></i>
+                    WeatherCast
+                </h1>
+                <p class="app-subtitle">Get your weather forecast instantly</p>
+            </header>
+
+            <!-- Search Section -->
+            <div class="search-section">
+                <div class="search-container">
+                    <input type="text" id="cityInput" placeholder="Enter city name..." spellcheck="false">
+                    <button id="searchBtn" class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="error-message" id="errorMessage"></div>
+            </div>
+
+            <!-- Loading Spinner -->
+            <div class="loading-spinner" id="loadingSpinner">
+                <div class="spinner"></div>
+                <p>Fetching weather data...</p>
+            </div>
+
+            <!-- Weather Display -->
+            <div class="weather-display" id="weatherDisplay">
+                <!-- Main Weather Info -->
+                <div class="main-weather">
+                    <div class="weather-icon-container">
+                        <img id="weatherIcon" src="images/clean sun.webp" alt="Weather Icon" class="weather-icon">
+                    </div>
+                    <div class="temperature-section">
+                        <h2 id="temperature" class="temperature">--°C</h2>
+                        <p id="weatherDescription" class="weather-description">--</p>
+                        <p id="cityName" class="city-name">Enter a city name</p>
+                        <p id="currentDate" class="current-date">--</p>
+                    </div>
+                </div>
+
+                <!-- Weather Details -->
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <img src="images/humidity.png" alt="Humidity" class="detail-icon-img">
+                        </div>
+                        <div class="detail-info">
+                            <p class="detail-label">Humidity</p>
+                            <p id="humidity" class="detail-value">--%</p>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <img src="images/wind icon.png" alt="Wind" class="detail-icon-img">
+                        </div>
+                        <div class="detail-info">
+                            <p class="detail-label">Wind Speed</p>
+                            <p id="windSpeed" class="detail-value">-- km/h</p>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="detail-info">
+                            <p class="detail-label">Visibility</p>
+                            <p id="visibility" class="detail-value">-- km</p>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <i class="fas fa-thermometer-half"></i>
+                        </div>
+                        <div class="detail-info">
+                            <p class="detail-label">Feels Like</p>
+                            <p id="feelsLike" class="detail-value">--°C</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Info -->
+                <div class="additional-info">
+                    <div class="info-card">
+                        <h3>Today's Forecast</h3>
+                        <div class="forecast-mini">
+                            <div class="forecast-item">
+                                <span class="forecast-time">Now</span>
+                                <img id="currentWeatherIcon" src="images/clean sun.webp" alt="Current Weather" class="forecast-icon">
+                                <span id="currentTemp" class="forecast-temp">--°</span>
+                            </div>
+                            <div class="forecast-item">
+                                <span class="forecast-time">6PM</span>
+                                <img id="eveningWeatherIcon" src="images/cloudy weather3.avif" alt="Evening Weather" class="forecast-icon">
+                                <span id="eveningTemp" class="forecast-temp">--°</span>
+                            </div>
+                            <div class="forecast-item">
+                                <span class="forecast-time">12AM</span>
+                                <img id="nightWeatherIcon" src="images/mist.png" alt="Night Weather" class="forecast-icon">
+                                <span id="nightTemp" class="forecast-temp">--°</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>Made with <i class="fas fa-heart"></i> for weather lovers</p>
+        </footer>
+    </div>
+
+    <script src="weather.js"></script>
+</body>
+</html>
